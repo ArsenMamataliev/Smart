@@ -2,33 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<title>Mini game "SMART"</title>
-
 </head>
 <body>
-<div class="screen" >
+<div class="screen">
 	<h1 id="gameName"> Mini game</h1>
-	<p id="RandomNums">Smart</p>
-	<p id="lineOfRndNum">...</p>
-	<button id="restartBtn" onclick="restart()" style="visibility:hidden"> Restart </button>
+	<p id="randomNums">Smart</p>
+	<p id="lineOfRndNum">_____________________</p>
+	<button id="reStartBtn" onclick="restart()"> Restart </button>
 	<button id="startBtn" onclick="start()" autofocus> Start </button>
 </div>
 <div class="settings">
-	<label for="maxRndNum">Maximum number</label>
-	<input type="number" value="20" min="1" max="999" id="maxRndNum" required>
-	<label for="arraySize">Quantity of numbers</label>
-	<input type="number" value="5" min="1" max="99" id="arraySize" required>
-	<label for="delayTime"> Delay time(second) </label>
-	<input type="number" value="2"  min="1" max="9" id="delayTime" required>
-	 <label for="Operation"> Select math operation </label>
-	 <select id="selectMathOperation" required>
+	<label for="Operation"> Select math operation </label>
+	<select id="selectMathOperation" required>
 		<option value="+">+</option>
 		<option value="-">-</option>
 		<option value="*">*</option>
 		<option value="/">/</option>
 	</select>
-
+	<label for="maxRndNum"> Big number </label>
+	<input type="number" value="20" min="1" max="999" id="maxRndNum" required>
+	<label for="arraySize"> Quantity of numbers </label>
+	<input type="number" value="5" min="1" max="99" id="arraySize" required>
+	<label for="delayTime"> Delay time(second) </label>
+	<input type="number" value="2"  min="1" max="9" id="delayTime" required>
 </div>
 <script src="miniGame.js"></script>
 </body>

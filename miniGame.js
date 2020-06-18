@@ -12,62 +12,73 @@ function pushRndToArr() {
   function loop() {
     if (counter == arraySize){  
       clearInterval(id);
-      document.getElementById("RandomNums").innerHTML = "?";
       checkSum(selectMathOperation);
       document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
-      document.getElementById("restartBtn").style.visibility = "visible";
-      document.getElementById("startBtn").style.visibility = "hidden";
     } else {    
             let RndNum = Math.floor(Math.random(1) * maxRndNum) + 1;
 		    temperaryMemory.push(RndNum);  
 		    counter++;
-		    let showRndNum = document.getElementById("RandomNums");
+		    let showRndNum = document.getElementById("randomNums");
 		    showRndNum.innerHTML = RndNum ;
     }
   } 
 }
 //Start game
 function start(){
+	document.getElementById("startBtn").disabled = "true";
 	document.getElementById("gameName").innerHTML = "Good Luck!";
 	pushRndToArr();
 }
-//Clear temperaryMemory and change other settings
-function makeArrayEmpty(){
-	temperaryMemory = [];
-	document.getElementById("lineOfRndNum").innerHTML = "...";
-} 
+
 //Restart game
 function restart(){
-	makeArrayEmpty()
+   //Clear temperaryMemory
+	temperaryMemory = [];
+    document.body.style.backgroundColor = "green";
+	document.getElementById("lineOfRndNum").innerHTML="_____________________";
 	start();
+
 }
+
+//Right answer
+function rgtAnswer(){
+	document.body.style.backgroundColor = "blue";
+	document.getElementById("gameName").innerHTML = "Awesome";
+}
+
+//Wrong answer
+function wrgAnswer(){
+	document.body.style.backgroundColor = "red";
+	document.getElementById("gameName").innerHTML = "Try again please";
+}
+
+
 // Check result
 function checkSum(selectMathOperation){
-	var rightAnswer = +prompt("Please your answer");
+	let rightAnswer = +prompt("Please your answer");
 	switch(selectMathOperation){
 		case "+":
-		var additionTotal = temperaryMemory.reduce((sum, current)=> sum + current);
-	    (additionTotal == rightAnswer)? alert("Good job!"): alert("Please try again");
+		let additionTotal = temperaryMemory.reduce((sum, current)=> sum + current);
+	    (additionTotal == rightAnswer)? rgtAnswer(): wrgAnswer();     
 	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
-	    document.getElementById("RandomNums").innerHTML = additionTotal;
+	    document.getElementById("randomNums").innerHTML = additionTotal;
 		break;
 		case "-":
-		var minusTotal = temperaryMemory.reduce((sum, current)=> sum - current);
-	    (minusTotal == rightAnswer)? alert("Good job!"): alert("Please try again");
-	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
-	    document.getElementById("RandomNums").innerHTML = minusTotal;
+		let minusTotal = temperaryMemory.reduce((sum, current)=> sum - current);
+	    (minusTotal == rightAnswer)? rgtAnswer(): wrgAnswer();
+	    document.getElementById("randomNums").innerHTML = minusTotal;
 		break;
 		case "*":
-		var multiplyTotal = temperaryMemory.reduce((sum, current)=> sum * current);
-	    (multiplyTotal == rightAnswer)? alert("Good job!"): alert("Please try again");
+		let multiplyTotal = temperaryMemory.reduce((sum, current)=> sum * current);
+	    (multiplyTotal == rightAnswer)? rgtAnswer(): wrgAnswer();
 	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
-	    document.getElementById("RandomNums").innerHTML = multiplyTotal;
+	    document.getElementById("randomNums").innerHTML = multiplyTotal;
 		break;
 		case "/":
-		var divisionTotal = temperaryMemory.reduce((sum, current)=> sum / current);
-	    (divisionTotal == rightAnswer)? alert("Good job!"): alert("Please try again");
+		let divisionTotal = temperaryMemory.reduce((sum, current)=> sum / current);
+	    (divisionTotal == rightAnswer)? rgtAnswer(): wrgAnswer();
 	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
-	    document.getElementById("RandomNums").innerHTML = divisionTotal;
+	    document.getElementById("randomNums").innerHTML = divisionTotal;
 		break;
 	} 
  
