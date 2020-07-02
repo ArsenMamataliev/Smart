@@ -8,43 +8,42 @@
  	color: white;
  	background: green;
  	text-align: center;
-	 font-family: 'Times New Roman', Times, serif; 
+	font-family: 'Times New Roman', Times, serif; 
 	}
 
 .screen{
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 	display: block;
 	padding: 0;
-	z-index: 0;
 }
 
  #randomNums{
- 	font-size: 290px;
+ 	font-size: 250px;
  	font-weight: bold;
  	padding: 0;
- 	margin: 0;
+ 	margin:0;
  }
 
- button{
-	 border: none;
+ #startBtn{
  	border-radius: 0 20px;
  	padding: 10px 100px;
  	font-size: 25px;
  	font-weight: bold;
 	cursor: pointer;
 	color: green;
-
+	margin-top: 70px;
  }
  
- button:hover{
+ #startBtn:hover{
     color:#09500b;
  }
 
  .settings {
+	 border-left: 2px dotted white;
 	 position: absolute;
 	 background-color:green;
-	 width: 100%;
+	 width: 20%;
 	 height: 100%;
 	 top: 0;
 	 right: 0;
@@ -66,11 +65,19 @@
 
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 750px) {
   #randomNums{ 
-	margin: 120px 0;
- 	font-size: 130px;
+	margin-top: 120px;
+	margin-bottom: 150px;
+ 	font-size: 120px;
  	font-weight: bold;
+ }
+ .settings{
+	width: 100%;
+	border-left: none;
+ }
+ #startBtn{
+	margin-top: 30px;
  }
 } 
 
