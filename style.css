@@ -8,74 +8,99 @@
  	color: white;
  	background: green;
  	text-align: center;
- 	font-family: Arial, Times New Roman;
- }
+	 font-family: 'Times New Roman', Times, serif; 
+	}
 
 .screen{
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 	display: block;
 	padding: 0;
+	z-index: 0;
 }
 
  #randomNums{
- 	font-size: 300px;
+ 	font-size: 290px;
  	font-weight: bold;
  	padding: 0;
  	margin: 0;
  }
 
  button{
- 	border-radius: 5px;
- 	padding: 5px 15px;
- 	font-size: 18px;
+	 border: none;
+ 	border-radius: 0 20px;
+ 	padding: 10px 100px;
+ 	font-size: 25px;
  	font-weight: bold;
- 	margin-bottom: 15px;
- 	cursor: pointer;
- 	color: green;
+	cursor: pointer;
+	color: green;
 
  }
-
+ 
  button:hover{
-    color: #0C4B03;
-    padding: 5px 20px;
+    color:#09500b;
  }
 
  .settings {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
- 	margin-top: 15px;
+	 position: absolute;
+	 background-color:green;
+	 width: 100%;
+	 height: 100%;
+	 top: 0;
+	 right: 0;
+	 display: none;
+	
+	 
  }
 
  input, select{
- 	padding: 0;
- 	text-align: center;
-	margin: 3px 10px; 	
+	padding: 5px;
+	margin-top: 20px;
+ 	text-align: center;	
 	border-radius: 5px;
- 	 }
-
+	  }
+	  
  label{
- 	padding-top: 5px;
+	 padding-top: 50px;
  }
 
 
 
 @media screen and (max-width: 400px) {
-  #randomNums{
+  #randomNums{ 
+	margin: 120px 0;
  	font-size: 130px;
  	font-weight: bold;
  }
- 
- .settings{
- 	flex-direction: column;
- 	width: 90%;
- 	margin: auto;
- 	border-top: 1px solid white;
- }
- 
- select, option{
-	padding-left: 45%;
- }
- 
-}
+} 
+
+/*menu*/
+.container {
+	display: inline-block;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 1;
+
+  }
+  
+  .bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: white;
+	margin: 6px 0;
+	transition: 0.4s;
+  }
+  
+  .change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+  }
