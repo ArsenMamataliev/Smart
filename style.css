@@ -12,7 +12,7 @@
 	}
 
 .screen{
-	width: 100%;
+	max-width: 100%;
 	height: auto;
 	display: block;
 	padding: 0;
@@ -73,7 +73,7 @@
  	font-weight: bold;
  }
  .settings{
-	width: 100%;
+	max-width: 100%;
 	border-left: none;
  }
  #startBtn{
