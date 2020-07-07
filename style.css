@@ -12,16 +12,16 @@
 	}
 
 .screen{
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 	display: block;
 	padding: 0;
 }
 
  #randomNums{
- 	font-size: 240px;
+ 	font-size: 250px;
  	font-weight: bold;
- 	padding: 0 5px;
+ 	padding: 0;
  	margin:0;
  }
 
@@ -73,7 +73,7 @@
  	font-weight: bold;
  }
  .settings{
-	max-width: 100%;
+	width: 100%;
 	border-left: none;
  }
  #startBtn{
