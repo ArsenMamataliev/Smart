@@ -20,14 +20,15 @@ function pushRndToArr() {
 		    counter++;
 		    let showRndNum = document.getElementById("randomNums");
 		    showRndNum.innerHTML = RndNum ;
-    }
-  } 
+    		}
+    } 
 }
 //Start game
 function start(){
 	myFunction();
 	pushRndToArr();
 	restart();
+	timerRestartBtn();
 }
 
 function restart(){
@@ -36,10 +37,7 @@ function restart(){
 	document.getElementById("startBtn").style.color = "green"
 	document.getElementById("lineOfRndNum").innerHTML="_____________________";
 	document.getElementById("startBtn").innerHTML = "Restart"
-	document.getElementById("notifications").innerHTML = "";	
 	document.getElementById("notifications").innerHTML = "";
-	
-	
 	}
 //Right answer
 function rgtAnswer(){
@@ -62,24 +60,29 @@ function checkSum(selectMathOperation){
 	switch(selectMathOperation){
 		case "+":
 		let additionTotal = temperaryMemory.reduce((sum, current)=> sum + current);
-	    (additionTotal == rightAnswer)? rgtAnswer(): wrgAnswer();     
+	    (additionTotal == rightAnswer)? rgtAnswer(): wrgAnswer();    
+	    document.getElementById("lineOfRndNum").style.visibility = "visible"; 
 	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
 	    document.getElementById("randomNums").innerHTML = additionTotal;
 		break;
 		case "-":
 		let minusTotal = temperaryMemory.reduce((sum, current)=> sum - current);
 	    (minusTotal == rightAnswer)? rgtAnswer(): wrgAnswer();
+	    document.getElementById("lineOfRndNum").style.visibility = "visible";
+	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
 	    document.getElementById("randomNums").innerHTML = minusTotal;
 		break;
 		case "*":
 		let multiplyTotal = temperaryMemory.reduce((sum, current)=> sum * current);
 	    (multiplyTotal == rightAnswer)? rgtAnswer(): wrgAnswer();
+	    document.getElementById("lineOfRndNum").style.visibility = "visible";
 	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
 	    document.getElementById("randomNums").innerHTML = multiplyTotal;
 		break;
 		case "/":
 		let divisionTotal = temperaryMemory.reduce((sum, current)=> sum / current);
 	    (divisionTotal == rightAnswer)? rgtAnswer(): wrgAnswer();
+	    document.getElementById("lineOfRndNum").style.visibility = "visible";
 	    document.getElementById("lineOfRndNum").innerHTML = temperaryMemory;
 	    document.getElementById("randomNums").innerHTML = divisionTotal;
 		break;
@@ -102,17 +105,28 @@ function menuHide(x) {
 var myVar;
 function myFunction() {
 	document.getElementById("loader").style.display = "block";
-	document.getElementById("notifications").style.display = "none";
-	document.getElementById("randomNums").style.display = "none";
-	document.getElementById("lineOfRndNum").style.display = "none";
-	document.getElementById("startBtn").style.visibility = "hidden";
-    myVar = setTimeout(showPage, 1000);
+	document.getElementById("notifications").style.visibility = "hidden";
+	document.getElementById("randomNums").style.visibility = "hidden";
+	document.getElementById("lineOfRndNum").style.visibility = "hidden";
+	document.getElementById("startBtn").disabled = true;
+	let delayTime2 = Number(document.getElementById("delayTime").value);
+    myVar = setTimeout(showPage, delayTime2 * 1000);
 }
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
-	document.getElementById("notifications").style.display = "block";
-	document.getElementById("randomNums").style.display = "block";
-	document.getElementById("lineOfRndNum").style.display = "block";
-	document.getElementById("startBtn").style.visibility = "visible";
+	document.getElementById("notifications").style.visibility = "visible";
+	document.getElementById("randomNums").style.visibility = "visible";
 } 
+
+//set timer to enable restart button
+function timerRestartBtn(){
+let delayTime = Number(document.getElementById("delayTime").value);
+let arraySize = Math.floor(Number(document.getElementById("arraySize").value));
+setTimeout(makeEnbldBtn, 1000 * delayTime*arraySize);
+}
+
+//enabled btn
+function makeEnbldBtn(){
+	disldBtn = document.getElementById("startBtn").disabled = false;
+}

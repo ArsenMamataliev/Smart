@@ -19,38 +19,42 @@
 }
 
  #randomNums{
- 	font-size: 250px;
+ 	font-size: 350px;
  	font-weight: bold;
  	padding: 0;
  	margin:0;
  }
 
  #startBtn{ 
+ 	position: absolute;
+ 	right: 40%;
+ 	bottom: 20px;
  	border-radius: 0 20px;
  	padding: 10px 100px;
  	font-size: 25px;
  	font-weight: bold;
 	cursor: pointer;
 	color: green;
-	margin-top: 70px;
 	visibility: visible;
  }
  
  #startBtn:hover{
     color:#09500b;
  }
+ #lineOfRndNum{
+ 	padding: 0;
+ 	margin-bottom: 10px;
+ }
 
  .settings {
-	 border-left: 2px dotted white;
-	 position: absolute;
-	 background-color:green;
-	 width: 20%;
-	 height: 100%;
-	 top: 0;
-	 right: 0;
-	 display: none;
-	
-	 
+	border-left: 2px dotted white;
+	position: absolute;
+	background-color:green;
+	width: 20%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	display: none;
  }
 
  input, select{
@@ -58,29 +62,12 @@
 	margin-top: 20px;
  	text-align: center;	
 	border-radius: 5px;
-	  }
+	}
 	  
  label{
-	 padding-top: 50px;
+	padding-top: 50px;
  }
 
-
-
-@media screen and (max-width: 750px) {
-  #randomNums{ 
-	margin-top: 120px;
-	margin-bottom: 150px;
- 	font-size: 120px;
- 	font-weight: bold;
- }
- .settings{
-	width: 100%;
-	border-left: none;
- }
- #startBtn{
-	margin-top: 30px;
- }
-} 
 
 /*menu*/
 .container {
@@ -117,7 +104,7 @@
 #loader {
 	  display: none;
 	  position: absolute;
-	  left: 50%;
+	  left: 45%;
 	  top: 50%;
 	  border: 16px solid #f3f3f3;
 	  border-radius: 50%;
@@ -132,3 +119,23 @@
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
 }
+
+
+/*Responsive*/
+@media screen and (max-width: 750px) {
+  #randomNums{ 
+  	padding: 180px 5px 120px 5px;
+ 	font-size: 100px;
+ 	font-weight: bold;
+ }
+
+ .settings{
+	width: 100%;
+	border-left: none;
+ }
+
+ #startBtn{
+	right: 25%;
+ 	padding: 5px 50px;
+ 	z-index: -1;
+} 
