@@ -22,12 +22,12 @@ function pushRndToArr() {
 		    showRndNum.innerHTML = RndNum ;
     }
   } 
-  
 }
 //Start game
 function start(){
+	myFunction();
 	pushRndToArr();
-	restart()
+	restart();
 }
 
 function restart(){
@@ -38,7 +38,8 @@ function restart(){
 	document.getElementById("startBtn").innerHTML = "Restart"
 	document.getElementById("notifications").innerHTML = "";	
 	document.getElementById("notifications").innerHTML = "";
-	document.getElementById("randomNums").innerHTML = "...";
+	
+	
 	}
 //Right answer
 function rgtAnswer(){
@@ -87,7 +88,7 @@ function checkSum(selectMathOperation){
     
 }
 //Hide and show menu
-function myFunction(x) {
+function menuHide(x) {
 	x.classList.toggle("change");
 	var a = document.getElementById("settingBox");
 	if (a.style.display === "block") {
@@ -96,3 +97,22 @@ function myFunction(x) {
 		a.style.display = "block";
 	  }
 }
+
+//hide & show loader
+var myVar;
+function myFunction() {
+	document.getElementById("loader").style.display = "block";
+	document.getElementById("notifications").style.display = "none";
+	document.getElementById("randomNums").style.display = "none";
+	document.getElementById("lineOfRndNum").style.display = "none";
+	document.getElementById("startBtn").style.visibility = "hidden";
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+	document.getElementById("notifications").style.display = "block";
+	document.getElementById("randomNums").style.display = "block";
+	document.getElementById("lineOfRndNum").style.display = "block";
+	document.getElementById("startBtn").style.visibility = "visible";
+} 

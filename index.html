@@ -7,8 +7,9 @@
 	<title>"SMART"</title>
 </head>
 <body>
+<div id="loader"></div>	
 <div class="screen"> 
-	<div class="container" onclick="myFunction(this)">
+	<div class="container" onclick="menuHide(this)">
 		<div class="bar1"></div>
 		<div class="bar2"></div>
 		<div class="bar3"></div>
@@ -31,8 +32,7 @@
 				<option value="/">/</option>
 			</select>
 		</div>
-
-			<h1 id="notifications"></h1>
+    <h1 id="notifications"></h1>
 	<p id="randomNums">Smart</p>
 	<p id="lineOfRndNum">_____________________</p>
 	<button id="startBtn" onclick="start()"> Start </button>
