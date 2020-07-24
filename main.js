@@ -123,7 +123,7 @@ function showPage() {
 function timerRestartBtn(){
 let delayTime = Number(document.getElementById("delayTime").value);
 let arraySize = Math.floor(Number(document.getElementById("arraySize").value));
-setTimeout(makeEnbldBtn, 1000 * delayTime*arraySize);
+setTimeout(makeEnbldBtn, 1000 * (delayTime * arraySize + 2));
 }
 
 //enabled btn
