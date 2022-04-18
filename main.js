@@ -36,7 +36,7 @@ function restart(){
 	document.body.style.backgroundColor = "green";
 	document.getElementById("startBtn").style.color = "green"
 	document.getElementById("lineOfRndNum").innerHTML="_____________________";
-	document.getElementById("startBtn").innerHTML = "Restart"
+	document.getElementById("startBtn").innerHTML = "RESTART"
 	document.getElementById("notifications").innerHTML = "";
 	}
 //Right answer
